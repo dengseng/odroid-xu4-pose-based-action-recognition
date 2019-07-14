@@ -1,3 +1,55 @@
+# Odroid XU4 end-to-end pose-based action classification
+# trivial actor tracking for action detection
+
+## pose estimates
+
+3 network choices
+- OpenPose VGGNet
+- MobileNet v2 Large
+- MobileNet v2 Small
+
+18 joint coordinates
+5 distance vectors
+
+## support vector classifier
+
+40 frames per video (JHMDB dataset)
+
+## accuracy
+
+data selected for all video homogenized for 40 frames in each sample
+
+JHMDB 3 split average
+
+| Network | accuracy |
+|:--------|:---------|
+| OpenPose VGGNet | 0.3435 |
+| MobileNet v2 Large | 0.2737 |
+| MobileNet v2 Small | 0.2058 |
+
+data selected for full 40 frame video samples
+
+JHMDB 3 split average
+
+| Network | accuracy |
+|:--------|:---------|
+| OpenPose VGGNet | 0.4301 |
+| MobileNet v2 Large | 0.3121 |
+| MobileNet v2 Small | 0.2702 |
+
+## frames per second
+
+Odroid XU4
+
+| Network | frames per second |
+|:--------|:------------------|
+| OpenPose VGGNet | 0.1142 fps |
+| MobileNet v2 Large | 0.7212 fps |
+| MobileNet v2 Small | 1.0757 fps |
+
+
+
+## -------------------------------- from forked repo --------------------------------
 # tf-pose-estimation
 
 'Openpose', human pose estimation algorithm, have been implemented using Tensorflow. It also provides several variants that have some changes to the network structure for **real-time processing on the CPU or low-power embedded devices.**
